@@ -569,7 +569,7 @@ tr:hover {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  color: var(--dark);
+  color: var(--primary);
 }
 
 .form-group select,
