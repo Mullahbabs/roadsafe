@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Prediction | RoadSafe</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="images/highway-logo-23737955.png" alt="RoadSafe Logo" />
+          <h1>RoadSafe</h1>
+        </div>
+
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="predict.html">
+                <i class="fas fa-car-crash"></i>
+                <span>New Prediction</span>
+              </a>
+            </li>
+            <li>
+              <a href="reports.html">
+                <i class="fas fa-chart-bar"></i>
+                <span>Reports</span>
+              </a>
+            </li>
+            <li id="adminMenuItem" class="hidden">
+              <a href="users.html">
+                <i class="fas fa-users-cog"></i>
+                <span>User Management</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="user-profile">
+          <div class="avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="user-info">
+            <span class="username">Guest</span>
+            <span class="role">Standard User</span>
+          </div>
+          <a href="#" id="logoutBtn" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="header">
+          <h2>New Accident Severity Prediction</h2>
+          <div class="header-actions">
+            <div class="notifications">
+              <i class="fas fa-bell"></i>
+              <span class="badge">0</span>
+            </div>
+            <div class="date-display">
+              <i class="fas fa-calendar-alt"></i>
+              <span id="currentDate"></span>
+            </div>
+          </div>
+        </header>
+
+        <div class="prediction-container">
+          <div class="card prediction-form-card">
+            <form id="predictionForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="vehicleType">Vehicle Type</label>
+                  <select id="vehicleType" required>
+                    <option value="" disabled selected>
+                      Select vehicle type
+                    </option>
+                    <option value="motorcycle">Motorcycle</option>
+                    <option value="car">Car</option>
+                    <option value="truck">Truck</option>
+                    <option value="bus">Bus</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="speed">Speed (km/h)</label>
+                  <input
+                    type="number"
+                    id="speed"
+                    min="0"
+                    max="250"
+                    step="1"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="roadCondition">Road Condition</label>
+                  <select id="roadCondition" required>
+                    <option value="" disabled selected>
+                      Select road condition
+                    </option>
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                    <option value="poor">Poor</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="weather">Weather Condition</label>
+                  <select id="weather" required>
+                    <option value="" disabled selected>
+                      Select weather condition
+                    </option>
+                    <option value="clear">Clear</option>
+                    <option value="rain">Rain</option>
+                    <option value="fog">Fog</option>
+                    <option value="snow">Snow</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="driverExperience"
+                    >Driver Experience (years)</label
+                  >
+                  <input
+                    type="number"
+                    id="driverExperience"
+                    min="0"
+                    max="60"
+                    step="1"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="location">Location (optional)</label>
+                  <input
+                    type="text"
+                    id="location"
+                    placeholder="Enter location"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group admin-only hidden">
+                <label for="scenarioName">Save as Scenario (Admin Only)</label>
+                <input
+                  type="text"
+                  id="scenarioName"
+                  placeholder="Enter scenario name"
+                />
+              </div>
+
+              <div class="form-group admin-only hidden">
+                <label for="scenarioSelect">Load Scenario (Admin Only)</label>
+                <select id="scenarioSelect">
+                  <option value="">Select a saved scenario</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="additionalNotes">Additional Notes</label>
+                <textarea
+                  id="additionalNotes"
+                  rows="3"
+                  placeholder="Any additional factors..."
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn primary">
+                  <i class="fas fa-calculator"></i> Calculate Severity
+                </button>
+                <button type="reset" class="btn secondary">
+                  <i class="fas fa-undo"></i> Reset Form
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card result-card hidden" id="resultCard">
+            <div class="result-header">
+              <h3>Prediction Result</h3>
+              <div class="severity-level">
+                Severity: <span id="severityValue">0</span>/10
+              </div>
+            </div>
+
+            <div class="severity-meter">
+              <div class="meter-track">
+                <div class="meter-fill" id="meterFill"></div>
+              </div>
+              <div class="meter-labels">
+                <span>Low</span>
+                <span>Medium</span>
+                <span>High</span>
+              </div>
+            </div>
+
+            <div class="result-details">
+              <h4>Factors Breakdown</h4>
+              <ul id="factorsList"></ul>
+            </div>
+
+            <div class="result-actions">
+              <button class="btn primary" id="savePrediction">
+                <i class="fas fa-save"></i> Save Prediction
+              </button>
+              <button class="btn secondary" id="newPrediction">
+                <i class="fas fa-plus"></i> New Prediction
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/predict.js"></script>
+  </body>
+</html>
