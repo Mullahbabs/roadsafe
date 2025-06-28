@@ -31,7 +31,7 @@ body {
 
 .login-left {
   flex: 1;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 3rem;
   display: flex;
@@ -43,16 +43,32 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  gap: 1rem; /* Adds consistent spacing between image and text */
 }
 
 .logo img {
-  width: 40px;
-  margin-right: 1rem;
+  width: 100%; /* Increased from 50px for better visibility */
+  height: 100%; /* Make equal to width for perfect circle */
+  border-radius: 50%; /* Creates the round shape */
+  object-fit: cover; /* Ensures image fills the circle properly */
+  border: 3px solid #4361ee; /* Brand-colored border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle depth */
+  transition: all 0.3s ease; /* Smooth hover effects */
+}
+
+.logo img:hover {
+  transform: scale(1.05); /* Slight grow effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo h1 {
   font-size: 1.8rem;
   font-weight: 600;
+  margin: 0; /* Remove default margins */
+  color: #fff; /* Darker color for better contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 .login-left h2 {
@@ -92,6 +108,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: linear-gradient(rgba(67, 97, 238, 0.35), rgba(63, 55, 201, 0.35)),
+    url("/images/History-of-FRSC.jpg") center/cover no-repeat;
   padding: 3rem;
 }
 
@@ -99,7 +117,7 @@ body {
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
-  background: white;
+  background: rgba(0, 0, 0, 0.6);
   padding: 2.5rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -108,10 +126,13 @@ body {
 .login-box h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  text-align: center;
+  color: whitesmoke;
 }
 
 .login-box p {
-  color: var(--gray);
+  color: var(--success);
+  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -121,6 +142,7 @@ body {
 
 .input-group label {
   display: block;
+  color: #fff;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -148,6 +170,7 @@ body {
 
 .remember {
   display: flex;
+  color: #fff;
   align-items: center;
   cursor: pointer;
 }
@@ -157,7 +180,7 @@ body {
 }
 
 .forgot-password {
-  color: var(--primary);
+  color: var(--success);
   text-decoration: none;
   font-size: 0.9rem;
 }
