@@ -1088,7 +1088,7 @@ tr:hover {
   border-top: 1px solid #eee;
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
 @media (max-width: 1024px) {
   .sidebar {
     width: 220px;
@@ -1102,18 +1102,54 @@ tr:hover {
   .charts-section {
     grid-template-columns: 1fr;
   }
+
+  /* Ensure prediction container fits within viewport */
+  .prediction-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* Constrain card widths */
+  .card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Adjust table for smaller screens */
+  .table-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Full viewport width for body and root containers */
+  body,
+  .dashboard-container,
+  .login-container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Stack dashboard layout vertically */
   .dashboard-container {
     flex-direction: column;
   }
 
+  /* Sidebar adjustments */
   .sidebar {
     width: 100%;
     flex-direction: row;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
   }
 
   .logo {
@@ -1123,23 +1159,53 @@ tr:hover {
     border-bottom: none;
     border-right: 1px solid #eee;
     padding-right: 1rem;
+    flex: 0 0 auto;
+  }
+
+  .logo img {
+    width: 24px;
+  }
+
+  .logo h1 {
+    font-size: 1.1rem;
   }
 
   .nav-menu {
     flex: 1;
+    min-width: 0;
   }
 
   .nav-menu ul {
     display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-menu ul::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-menu li {
     margin-bottom: 0;
     margin-right: 0.5rem;
+    flex: 0 0 auto;
+  }
+
+  .nav-menu a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
   }
 
   .nav-menu a span {
     display: none;
+  }
+
+  .nav-menu a i {
+    margin-right: 0;
+    font-size: 1.2rem;
   }
 
   .user-profile {
@@ -1147,6 +1213,7 @@ tr:hover {
     padding-top: 0;
     border-top: none;
     margin-left: auto;
+    flex: 0 0 auto;
   }
 
   .user-info,
@@ -1154,44 +1221,176 @@ tr:hover {
     display: none;
   }
 
+  .avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .logout {
+    padding: 0.3rem;
+  }
+
+  /* Main content adjustments */
   .main-content {
-    padding: 1.5rem;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .form-actions,
-  .result-actions {
-    flex-direction: column;
-  }
-
-  .btn {
+    padding: 1rem;
     width: 100%;
-    justify-content: center;
+    box-sizing: border-box;
   }
 
-  .header-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .table-actions {
+  /* Header adjustments */
+  .header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
 
+  .header h2 {
+    font-size: 1.4rem;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .date-range-selector,
   .search-box,
   #severityFilter {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .search-box input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Form adjustments */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .form-actions,
+  .result-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    min-height: 44px; /* Touch-friendly height */
+  }
+
+  /* Table adjustments */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 0;
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .action-btn {
+    padding: 0.3rem;
+    font-size: 1rem;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    width: 90%;
+    max-width: 400px;
+    margin: 1rem;
+  }
+
+  .modal-body,
+  .modal-header,
+  .modal-footer {
+    padding: 1rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .close-modal {
+    font-size: 1.2rem;
+  }
+
+  /* Card adjustments */
+  .card {
+    padding: 1rem;
+  }
+
+  .card-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .prediction-form-card,
+  .users-table-card,
+  .predictions-table-card {
+    padding: 1rem;
+  }
+
+  /* Login page adjustments */
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    flex: none;
+    width: 100%;
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .login-box {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .login-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 576px) {
   .widgets-row {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-cards {
     grid-template-columns: 1fr;
   }
 
@@ -1201,6 +1400,139 @@ tr:hover {
   }
 
   .header-actions {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  /* Further table adjustments */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  thead,
+  tbody,
+  tr {
+    display: block;
+  }
+
+  th,
+  td {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  th {
+    display: none; /* Hide headers on very small screens */
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.5rem;
+    width: 45%;
+    font-weight: 500;
+    color: var(--gray);
+  }
+
+  /* Add data-label attributes for responsive tables */
+  td:nth-child(1):before {
+    content: "ID";
+  }
+  td:nth-child(2):before {
+    content: "Date";
+  }
+  td:nth-child(3):before {
+    content: "Vehicle";
+  }
+  td:nth-child(4):before {
+    content: "Speed";
+  }
+  td:nth-child(5):before {
+    content: "Road";
+  }
+  td:nth-child(6):before {
+    content: "Weather";
+  }
+  td:nth-child(7):before {
+    content: "Severity";
+  }
+  td:nth-child(8):before {
+    content: "Actions";
+  }
+  /* User management table */
+  td:nth-child(1):before {
+    content: "Username";
+  }
+  td:nth-child(2):before {
+    content: "Role";
+  }
+  td:nth-child(3):before {
+    content: "Actions";
+  }
+
+  .severity-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .action-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  /* Ensure charts fit */
+  .chart-container {
+    height: 200px;
+  }
+
+  .login-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .login-left p {
+    font-size: 0.9rem;
+  }
+
+  .feature span {
+    font-size: 1.2rem;
+  }
+
+  .feature p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Very small screens (e.g., older phones) */
+@media (max-width: 360px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+
+  .card {
+    padding: 0.5rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 0.5rem;
+  }
+
+  .login-box {
+    padding: 1rem;
   }
 }
