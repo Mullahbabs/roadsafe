@@ -25,27 +25,23 @@ body {
 
 /* Login Container */
 .login-container {
-  position: fixed;
   display: flex;
   background-size: cover;
   min-height: 100vh;
   align-items: center;
-  width: 100vw;
   background: linear-gradient(rgba(67, 97, 238, 0.55), rgba(0, 0, 0, 1)),
-    url("/images/History-of-FRSC.jpg") center/cover no-repeat;
+    url("/images/History-of-FRSC.jpg") center;
 }
 
 .login-left {
   flex: 1;
-  background: rgba(0, 0, 0, 0.6) center;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 6rem;
   margin: 0;
-  height: 100vh;
   display: flex;
   border-radius: 3px;
   flex-direction: column;
-  justify-content: center;
 }
 
 .logo {
