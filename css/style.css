@@ -237,7 +237,7 @@ body {
 
 .sidebar {
   width: 250px;
-  background: white;
+  background: #f3722c;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -276,7 +276,7 @@ body {
   align-items: center;
   padding: 0.75rem 1rem;
   border-radius: 5px;
-  color: var(--gray);
+  color: var(--light);
   text-decoration: none;
   transition: all 0.3s;
 }
@@ -293,7 +293,7 @@ body {
 }
 
 .nav-menu .active a {
-  background-color: rgba(67, 97, 238, 0.1);
+  background-color: #fff;
   color: var(--primary);
   font-weight: 500;
 }
@@ -325,15 +325,16 @@ body {
 .username {
   display: block;
   font-weight: 500;
+  color: var(--light);
 }
 
 .role {
   font-size: 0.8rem;
-  color: var(--gray);
+  color: var(--success);
 }
 
 .logout {
-  color: var(--gray);
+  color: var(--danger);
   padding: 0.5rem;
   border-radius: 5px;
 }
@@ -644,7 +645,7 @@ tr:hover {
 }
 
 .btn.primary {
-  background-color: var(--primary);
+  background-color: var(--success);
   color: white;
 }
 
@@ -653,8 +654,8 @@ tr:hover {
 }
 
 .btn.secondary {
-  background-color: #f0f0f0;
-  color: var(--dark);
+  background-color: #ef233c;
+  color: var(--light);
 }
 
 .btn.secondary:hover {
