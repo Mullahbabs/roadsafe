@@ -40,3 +40,13 @@ function deletePrediction(predictionId) {
   predictions = predictions.filter((p) => p.id !== predictionId);
   localStorage.setItem("predictions", JSON.stringify(predictions));
 }
+
+function getAccidentReports() {
+  return JSON.parse(localStorage.getItem("accidentReports")) || [];
+}
+
+function saveAccidentReport(report) {
+  const reports = getAccidentReports();
+  reports.push(report);
+  localStorage.setItem("accidentReports", JSON.stringify(reports));
+}
