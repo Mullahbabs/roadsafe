@@ -1849,3 +1849,144 @@ tr:hover {
     padding: 0.6rem;
   }
 }
+
+.weather-widget {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--light);
+}
+
+.weather-widget h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--light);
+}
+
+.weather-widget #weatherInfo {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.speed-recommendations {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.speed-recommendations::-webkit-scrollbar {
+  display: none;
+}
+
+.speed-item {
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  padding: 0.8rem;
+  text-align: center;
+  min-width: 100px;
+}
+
+.speed-item .vehicle-icon {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.speed-item .vehicle-type {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.speed-item .speed-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .weather-widget {
+    padding: 1rem;
+  }
+
+  .weather-widget h3 {
+    font-size: 1.1rem;
+  }
+
+  .weather-widget #weatherInfo {
+    font-size: 0.9rem;
+  }
+
+  .speed-recommendations {
+    gap: 0.8rem;
+  }
+
+  .speed-item {
+    min-width: 90px;
+    padding: 0.6rem;
+  }
+
+  .speed-item .vehicle-icon {
+    font-size: 1.3rem;
+  }
+
+  .speed-item .vehicle-type {
+    font-size: 0.85rem;
+  }
+
+  .speed-item .speed-value {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .weather-widget {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  .weather-widget h3 {
+    font-size: 1rem;
+  }
+
+  .weather-widget #weatherInfo {
+    font-size: 0.85rem;
+  }
+
+  .speed-item {
+    min-width: 80px;
+  }
+
+  .speed-item .vehicle-icon {
+    font-size: 1.2rem;
+  }
+
+  .speed-item .vehicle-type {
+    font-size: 0.8rem;
+  }
+
+  .speed-item .speed-value {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .weather-widget {
+    padding: 0.5rem;
+  }
+
+  .speed-item {
+    min-width: 70px;
+    padding: 0.5rem;
+  }
+}
