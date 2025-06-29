@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // Simulate weather based on time (05:15 AM WAT, June 29, 2025)
-  const currentHour = 5; // 05:15 AM WAT
+  // Simulate weather based on time (05:47 AM WAT, June 29, 2025)
+  const currentHour = 5; // 05:47 AM WAT
   const isNight = currentHour < 6 || currentHour >= 18;
   // Simulate weather: early morning in Nigeria (June, rainy season) likely Rain or Fog
   const currentWeather = isNight
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Update DOM
   const date = new Date();
-  date.setHours(5, 15, 0, 0); // Set to 05:15 AM WAT
+  date.setHours(5, 47, 0, 0); // Set to 05:47 AM WAT
   const options = {
     weekday: "long",
     year: "numeric",
