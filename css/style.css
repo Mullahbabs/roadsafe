@@ -2054,7 +2054,7 @@ tr:hover {
 .weather-widget {
   margin-top: 2.5rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: var(--radius-md);
   color: var(--light);
   backdrop-filter: blur(5px);
@@ -2105,7 +2105,7 @@ tr:hover {
 
 .speed-item {
   flex: 0 0 auto;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: var(--radius-sm);
   padding: 1.25rem 1rem;
   text-align: center;
