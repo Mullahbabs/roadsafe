@@ -63,30 +63,31 @@ body {
 .login-left {
   flex: 1;
   color: white;
+  width: 85%;
   padding: 6rem;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--danger);
+  gap: 1rem;
 }
 
 .logo img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50;
   object-fit: cover;
-  border: 3px solid var(--primary);
+  border: 1px solid var(--primary);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
 }
@@ -97,16 +98,16 @@ body {
 }
 
 .logo h1 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
 }
 
 .login-left h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
@@ -164,17 +165,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 3rem;
+  padding: 2rem 1rem;
   position: relative;
   z-index: 1;
 }
 
 .login-box {
-  max-width: 450px;
+  max-width: 500px;
   width: 100%;
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.7);
-  padding: 3rem;
+  padding: 2rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(5px);
@@ -190,15 +191,25 @@ body {
 }
 
 .login-box h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 0.75rem;
   text-align: center;
   color: white;
   font-weight: 600;
 }
 
+.login-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50;
+  object-fit: cover;
+  border: 1px solid var(--primary);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
 .login-box p {
-  color: var(--success);
+  color: var(--light);
   text-align: center;
   margin-bottom: 2.5rem;
   font-size: 1rem;
@@ -260,7 +271,7 @@ body {
 }
 
 .forgot-password {
-  color: var(--success);
+  color: var(--danger);
   text-decoration: none;
   font-size: 0.95rem;
   transition: var(--transition);
@@ -2077,7 +2088,7 @@ tr:hover {
   display: block;
   width: 40px;
   height: 3px;
-  background: var(--success);
+  background: var(--danger);
   margin-top: 0.5rem;
   border-radius: 2px;
 }
@@ -2086,6 +2097,7 @@ tr:hover {
   font-size: 1.05rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  color: #f8961e;
   line-height: 1.7;
 }
 
@@ -2126,6 +2138,22 @@ tr:hover {
   font-size: 1.8rem;
   margin-bottom: 0.75rem;
   color: white;
+}
+
+.speed-item.car .vehicle-icon {
+  color: #4361ee;
+}
+.speed-item.truck .vehicle-icon {
+  color: #f8961e;
+}
+.speed-item.bus .vehicle-icon {
+  color: #3f37c9;
+}
+.speed-item.motorcycle .vehicle-icon {
+  color: #ef233c;
+}
+.speed-item.other .vehicle-icon {
+  color: #d90429;
 }
 
 .speed-item .vehicle-type {

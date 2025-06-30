@@ -91,7 +91,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       minute: "2-digit",
       timeZone: "Africa/Lagos",
     });
-    weatherInfo.textContent = `${currentWeather} | ${formattedDate} | ${timeString} WAT`;
+    weatherInfo.innerHTML = `
+  <i class="fas fa-cloud" aria-hidden="true" style="color: white"></i> ${currentWeather} | 
+  <i class="fas fa-calendar-alt" aria-hidden="true" style="color: #4cc9f0"></i> ${formattedDate} | 
+  <i class="fas fa-clock" aria-hidden="true" style="color: #ef233c"></i> ${timeString} WAT
+`;
 
     // Update speed recommendations
     speedCar.textContent = `${speeds.car} km/h`;
