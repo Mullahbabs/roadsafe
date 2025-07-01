@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accident.IQ Severity Prediction</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-left">
+        <div class="logo">
+          <img src="images/History-of-FRSC.jpg" alt="RoadSafe Logo" />
+          <h1 style="font-size: 1.6rem;">Accident <span style="color: #ef233c; font-size:2.1rem">I.Q</span> </h1>
+        </div>
+        <h2>Accident Severity <br>Prediction Platform</h2>
+        <p>Making roads safer through predictive analytics</p>
+        <div class="features">
+          <div class="feature">
+            <span>📊</span>
+            <p>Advanced prediction models</p>
+          </div>
+          <div class="feature">
+            <span>🛡️</span>
+            <p>Enhanced road safety</p>
+          </div>
+          <div class="feature">
+            <span>📈</span>
+            <p>Comprehensive reporting</p>
+          </div>
+        </div>
+      <div class="weather-widget">
+          <h3>Today's Weather & Recommended Safe Speed Limits</h3>
+          <p id="weatherInfo">Loading weather...</p>
+          <p>With accurate weather report courtesy of Open-Meteo,<br>
+          we advice you stay within the relative speed limits as seen below</p>
+          <div class="speed-recommendations">
+            <div class="speed-item car">
+              <span class="vehicle-icon"><i class="fa fa-car"></i></span>
+              <span class="vehicle-type">Car</span>
+              <span class="speed-value" id="speedCar">0 km/h</span>
+            </div>
+            <div class="speed-item motorcycle">
+              <span class="vehicle-icon"><i class="fas fa-motorcycle"></i></span>
+              <span class="vehicle-type">Motorcycle</span>
+              <span class="speed-value" id="speedMotorcycle">0 km/h</span>
+            </div>
+            <div class="speed-item truck">
+              <span class="vehicle-icon"><i class="fa fa-truck"></i></span>
+              <span class="vehicle-type">Truck</span>
+              <span class="speed-value" id="speedTruck">0 km/h</span>
+            </div>
+            <div class="speed-item bus">
+              <span class="vehicle-icon"><i class="fas fa-bus"></i></span>
+              <span class="vehicle-type">Bus</span>
+              <span class="speed-value" id="speedBus">0 km/h</span>
+            </div>
+            <div class="speed-item other">
+              <span class="vehicle-icon"><i class="fas fa-caravan"></i></span>
+              <span class="vehicle-type">Other</span>
+              <span class="speed-value" id="speedOther">0 km/h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-right">
+        <div class="login-box"><span class="logo">
+          <img src="images/History-of-FRSC.jpg">
+          <h2>Welcome</h2></span>
+          <p>Please login to your account</p>
+
+          <form id="loginForm">
+            <div class="input-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="password batch">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <div class="options">
+              <label class="remember">
+                <input type="checkbox" id="remember" />
+                <span>Remember me </span>
+              </label>
+              
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+          </form>
+
+          
+
+        <div class="footer">
+          <p>© 2025 AccidentIQ Prediction Platform. All rights reserved.</p>
+          <p style="color: #f8961e;">Powered By BellaTECH.NG</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
+</html>

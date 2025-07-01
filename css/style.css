@@ -6,6 +6,7 @@
   --light: #f8f9fa;
   --dark: #212529;
   --gray: #6c757d;
+  --yellow: #f8961e;
   --danger: #ef233c;
   --success: #4cc9f0;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -36,6 +37,429 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Main Container */
+.aiq-main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(67, 97, 238, 0.1), rgba(255, 255, 255, 0.9)),
+    url("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80")
+      center/cover no-repeat fixed;
+}
+
+/* Header */
+.aiq-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--aiq-shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.aiq-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.aiq-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--aiq-primary);
+  box-shadow: var(--aiq-shadow-sm);
+}
+
+.aiq-logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--aiq-dark);
+}
+
+.aiq-nav-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.aiq-nav-link {
+  text-decoration: none;
+  color: var(--aiq-dark);
+  font-weight: 500;
+  transition: var(--aiq-transition);
+}
+
+.aiq-nav-link:hover {
+  color: var(--aiq-primary);
+}
+
+.aiq-auth-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  background: var(--aiq-primary);
+  color: white;
+  border-radius: var(--aiq-radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: var(--aiq-transition);
+}
+
+.aiq-auth-btn:hover {
+  background: #3a56d4;
+  transform: translateY(-2px);
+  box-shadow: var(--aiq-shadow-md);
+}
+
+/* Hero Banner */
+.aiq-hero-section {
+  text-align: center;
+  padding: 5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aiq-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--aiq-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.aiq-hero-description {
+  font-size: 1.1rem;
+  color: var(--aiq-gray);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.aiq-cta-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.aiq-action-btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--aiq-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--aiq-transition);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.aiq-primary-btn {
+  background: var(--aiq-primary);
+  color: white;
+  border: 2px solid var(--aiq-primary);
+}
+
+.aiq-primary-btn:hover {
+  background: #3a56d4;
+  transform: translateY(-2px);
+  box-shadow: var(--aiq-shadow-md);
+}
+
+.aiq-secondary-btn {
+  background: transparent;
+  color: var(--aiq-primary);
+  border: 2px solid var(--aiq-primary);
+}
+
+.aiq-secondary-btn:hover {
+  background: var(--aiq-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--aiq-shadow-md);
+}
+
+/* Location Search */
+.aiq-location-search {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.aiq-location-input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--aiq-radius-sm);
+  font-size: 1rem;
+  transition: var(--aiq-transition);
+}
+
+.aiq-location-input:focus {
+  outline: none;
+  border-color: var(--aiq-primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* Features Section */
+.aiq-features-section {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.aiq-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.aiq-section-title {
+  font-size: 1.8rem;
+  color: var(--aiq-dark);
+  margin-bottom: 1rem;
+}
+
+.aiq-section-intro {
+  color: var(--aiq-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aiq-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aiq-feature-card {
+  background: white;
+  border-radius: var(--aiq-radius-md);
+  padding: 2rem;
+  box-shadow: var(--aiq-shadow-sm);
+  transition: var(--aiq-transition);
+}
+
+.aiq-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--aiq-shadow-md);
+}
+
+.aiq-feature-icon {
+  font-size: 2.5rem;
+  color: var(--aiq-primary);
+  margin-bottom: 1.5rem;
+}
+
+.aiq-feature-name {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--aiq-dark);
+}
+
+.aiq-feature-desc {
+  color: var(--aiq-gray);
+  line-height: 1.6;
+}
+
+/* Safety Tips */
+.aiq-safety-section {
+  padding: 5rem 2rem;
+  background: var(--aiq-light);
+}
+
+.aiq-tips-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aiq-tips-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--aiq-dark);
+  margin-bottom: 1rem;
+}
+
+.aiq-tips-description {
+  font-size: 1rem;
+  color: var(--aiq-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.aiq-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.aiq-tip-card {
+  background: white;
+  border-radius: var(--aiq-radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--aiq-shadow-sm);
+}
+
+.aiq-tip-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--aiq-primary);
+}
+
+/* Hazard Report Form */
+.aiq-report-section {
+  padding: 5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aiq-report-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--aiq-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.aiq-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.aiq-form-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--aiq-primary);
+}
+
+.aiq-form-input,
+.aiq-form-textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--aiq-radius-sm);
+  font-size: 1rem;
+  transition: var(--aiq-transition);
+}
+
+.aiq-form-input:focus,
+.aiq-form-textarea:focus {
+  outline: none;
+  border-color: var(--aiq-primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.aiq-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.aiq-form-submit {
+  width: 100%;
+  padding: 1rem;
+  background: var(--aiq-primary);
+  color: white;
+  border: none;
+  border-radius: var(--aiq-radius-sm);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--aiq-transition);
+  margin-top: 1rem;
+}
+
+.aiq-form-submit:hover {
+  background: #3a56d4;
+  transform: translateY(-2px);
+  box-shadow: var(--aiq-shadow-md);
+}
+
+/* Statistics */
+.aiq-stats-section {
+  padding: 5rem 2rem;
+  background: var(--aiq-primary);
+  color: white;
+}
+
+.aiq-stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aiq-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.aiq-stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.aiq-stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Footer */
+.aiq-main-footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--aiq-shadow-sm);
+  margin-top: auto;
+}
+
+.aiq-footer-text {
+  font-size: 0.9rem;
+  color: var(--aiq-gray);
+  margin-bottom: 1rem;
+}
+
+.aiq-social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.aiq-social-icon {
+  color: var(--aiq-gray);
+  font-size: 1.2rem;
+  transition: var(--aiq-transition);
+}
+
+.aiq-social-icon:hover {
+  color: var(--aiq-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aiq-hero-title {
+    font-size: 2rem;
+  }
+
+  .aiq-cta-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aiq-nav-container {
+    display: none;
+  }
+
+  .aiq-location-search {
+    flex-direction: column;
+  }
 }
 
 /* Login Container */

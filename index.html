@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accident.IQ Severity Prediction</title>
+    <title>AccidentIQ | Stay Safe on the Road</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
@@ -15,113 +15,258 @@
     />
   </head>
   <body>
-    <div class="login-container">
-      <div class="login-left">
-        <div class="logo">
-          <img src="images/History-of-FRSC.jpg" alt="RoadSafe Logo" />
-          <h1 style="font-size: 1.6rem;">Accident <span style="color: #ef233c; font-size:2.1rem">I.Q</span> </h1>
+    <div class="aiq-main-container">
+      <header class="aiq-main-header">
+        <div class="aiq-logo-wrapper">
+          <img
+            src="images/History-of-FRSC.jpg"
+            alt="Accident IQ Logo"
+            class="aiq-logo-img"
+          />
+          <h1 class="aiq-logo-text">Accident IQ</h1>
         </div>
-        <h2>Accident Severity <br>Prediction Platform</h2>
-        <p>Making roads safer through predictive analytics</p>
-        <div class="features">
-          <div class="feature">
-            <span>📊</span>
-            <p>Advanced prediction models</p>
-          </div>
-          <div class="feature">
-            <span>🛡️</span>
-            <p>Enhanced road safety</p>
-          </div>
-          <div class="feature">
-            <span>📈</span>
-            <p>Comprehensive reporting</p>
-          </div>
-        </div>
-      <div class="weather-widget">
-          <h3>Today's Weather & Recommended Safe Speed Limits</h3>
-          <p id="weatherInfo">Loading weather...</p>
-          <p>With accurate weather report courtesy of Open-Meteo,<br>
-          we advice you stay within the relative speed limits as seen below</p>
-          <div class="speed-recommendations">
-            <div class="speed-item car">
-              <span class="vehicle-icon"><i class="fa fa-car"></i></span>
-              <span class="vehicle-type">Car</span>
-              <span class="speed-value" id="speedCar">0 km/h</span>
-            </div>
-            <div class="speed-item motorcycle">
-              <span class="vehicle-icon"><i class="fas fa-motorcycle"></i></span>
-              <span class="vehicle-type">Motorcycle</span>
-              <span class="speed-value" id="speedMotorcycle">0 km/h</span>
-            </div>
-            <div class="speed-item truck">
-              <span class="vehicle-icon"><i class="fa fa-truck"></i></span>
-              <span class="vehicle-type">Truck</span>
-              <span class="speed-value" id="speedTruck">0 km/h</span>
-            </div>
-            <div class="speed-item bus">
-              <span class="vehicle-icon"><i class="fas fa-bus"></i></span>
-              <span class="vehicle-type">Bus</span>
-              <span class="speed-value" id="speedBus">0 km/h</span>
-            </div>
-            <div class="speed-item other">
-              <span class="vehicle-icon"><i class="fas fa-caravan"></i></span>
-              <span class="vehicle-type">Other</span>
-              <span class="speed-value" id="speedOther">0 km/h</span>
-            </div>
-          </div>
-        </div>
-      </div>
+        <nav class="aiq-nav-container">
+          <a href="#features" class="aiq-nav-link">Features</a>
+          <a href="#safety" class="aiq-nav-link">Safety Tips</a>
+          <a href="#report" class="aiq-nav-link">Report Hazard</a>
+          <a href="#stats" class="aiq-nav-link">Statistics</a>
+          <a href="login.html" class="aiq-auth-btn">Login</a>
+        </nav>
+      </header>
 
-      <div class="login-right">
-        <div class="login-box"><span class="logo">
-          <img src="images/History-of-FRSC.jpg">
-          <h2>Welcome</h2></span>
-          <p>Please login to your account</p>
+      <main>
+        <section class="aiq-hero-section">
+          <h2 class="aiq-hero-title">
+            Making Nigeria's Roads Safer Through Data & Technology
+          </h2>
+          <p class="aiq-hero-description">
+            A Federal Road Safety Commission initiative to reduce accidents,
+            predict risks, and empower citizens to create safer highways for
+            all.
+          </p>
 
-          <form id="loginForm">
-            <div class="input-group">
-              <label for="username">Username</label>
+          <div class="aiq-location-search">
+            <input
+              type="text"
+              class="aiq-location-input"
+              placeholder="Enter your location to check accident risks..."
+            />
+            <button class="aiq-action-btn aiq-primary-btn">Check Safety</button>
+          </div>
+
+          <div class="aiq-cta-container">
+            <a href="#report" class="aiq-action-btn aiq-primary-btn"
+              >Report Hazard Now</a
+            >
+            <a href="#safety" class="aiq-action-btn aiq-secondary-btn"
+              >Learn Safety Tips</a
+            >
+          </div>
+        </section>
+
+        <section class="aiq-features-section" id="features">
+          <div class="aiq-section-header">
+            <h3 class="aiq-section-title">How Accident IQ Protects You</h3>
+            <p class="aiq-section-intro">
+              Our platform combines real-time data, community reporting, and
+              predictive analytics to make roads safer
+            </p>
+          </div>
+
+          <div class="aiq-features-grid">
+            <div class="aiq-feature-card">
+              <div class="aiq-feature-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <h4 class="aiq-feature-name">Real-time Alerts</h4>
+              <p class="aiq-feature-desc">
+                Get instant notifications about accidents, hazards, and
+                dangerous road conditions near your location or planned route.
+              </p>
+            </div>
+
+            <div class="aiq-feature-card">
+              <div class="aiq-feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 class="aiq-feature-name">Predictive Analytics</h4>
+              <p class="aiq-feature-desc">
+                Our AI models analyze historical data and current conditions to
+                predict high-risk areas and times for accidents.
+              </p>
+            </div>
+
+            <div class="aiq-feature-card">
+              <div class="aiq-feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4 class="aiq-feature-name">Community Reports</h4>
+              <p class="aiq-feature-desc">
+                Contribute to road safety by reporting hazards, accidents, or
+                dangerous driving behavior in your area.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="aiq-safety-section" id="safety">
+          <div class="aiq-tips-container">
+            <div class="aiq-section-header">
+              <h3 class="aiq-section-title">Essential Road Safety Tips</h3>
+              <p class="aiq-section-intro">
+                Knowledge is your best protection on the road. Follow these
+                guidelines to stay safe.
+              </p>
+            </div>
+
+            <div class="aiq-tips-grid">
+              <div class="aiq-tip-card">
+                <h4 class="aiq-tip-header">
+                  <i class="fas fa-car"></i> Defensive Driving
+                </h4>
+                <p class="aiq-tips-description">
+                  Always anticipate other drivers' actions. Maintain safe
+                  following distances and be prepared to react to unexpected
+                  situations.
+                </p>
+              </div>
+
+              <div class="aiq-tip-card">
+                <h4 class="aiq-tip-header">
+                  <i class="fas fa-phone-slash"></i> Avoid Distractions
+                </h4>
+                <p class="aiq-tips-description">
+                  Put your phone away while driving. Texting while driving makes
+                  you 23 times more likely to crash.
+                </p>
+              </div>
+
+              <div class="aiq-tip-card">
+                <h4 class="aiq-tip-header">
+                  <i class="fas fa-tachometer-alt"></i> Speed Management
+                </h4>
+                <p class="aiq-tips-description">
+                  Observe speed limits. For every 1km/h increase in speed, the
+                  risk of a crash increases by 3%.
+                </p>
+              </div>
+
+              <div class="aiq-tip-card">
+                <h4 class="aiq-tip-header">
+                  <i class="fas fa-umbrella"></i> Weather Awareness
+                </h4>
+                <p class="aiq-tips-description">
+                  Reduce speed by 1/3 on wet roads and by 1/2 on snowy roads.
+                  Increase following distances in poor conditions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="aiq-stats-section" id="stats">
+          <div class="aiq-stats-container">
+            <div class="aiq-section-header">
+              <h3 class="aiq-section-title">Road Safety By The Numbers</h3>
+              <p class="aiq-section-intro">
+                Understanding the scale of the challenge helps us work toward
+                solutions
+              </p>
+            </div>
+
+            <div class="aiq-stats-grid">
+              <div class="aiq-stat-item">
+                <h4 class="aiq-stat-value">12,077</h4>
+                <p class="aiq-stat-label">Reported Road Crashes (2022)</p>
+              </div>
+
+              <div class="aiq-stat-item">
+                <h4 class="aiq-stat-value">5,320</h4>
+                <p class="aiq-stat-label">Lives Lost (2022)</p>
+              </div>
+
+              <div class="aiq-stat-item">
+                <h4 class="aiq-stat-value">34%</h4>
+                <p class="aiq-stat-label">Reduction Target by 2025</p>
+              </div>
+
+              <div class="aiq-stat-item">
+                <h4 class="aiq-stat-value">1.2M</h4>
+                <p class="aiq-stat-label">Reports Processed</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="aiq-report-section" id="report">
+          <h3 class="aiq-report-title">Report a Road Hazard</h3>
+          <p class="aiq-hero-description">
+            Your report could save lives. Help us identify dangerous road
+            conditions, accidents, or hazards.
+          </p>
+
+          <form class="aiq-report-form">
+            <div class="aiq-form-group">
+              <label for="location" class="aiq-form-label"
+                >Hazard Location</label
+              >
               <input
                 type="text"
-                id="username"
-                placeholder="Enter your username"
-                required
+                id="location"
+                class="aiq-form-input"
+                placeholder="Enter exact location or landmark"
               />
             </div>
 
-            <div class="input-group">
-              <label for="password batch">Password</label>
+            <div class="aiq-form-group">
+              <label for="hazard-type" class="aiq-form-label"
+                >Hazard Type</label
+              >
               <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-                required
+                type="text"
+                id="hazard-type"
+                class="aiq-form-input"
+                placeholder="e.g. Pothole, Accident, Flooding"
               />
             </div>
 
-            <div class="options">
-              <label class="remember">
-                <input type="checkbox" id="remember" />
-                <span>Remember me </span>
-              </label>
-              
-              <a href="#" class="forgot-password">Forgot password?</a>
+            <div class="aiq-form-group">
+              <label for="description" class="aiq-form-label"
+                >Description</label
+              >
+              <textarea
+                id="description"
+                class="aiq-form-textarea"
+                placeholder="Provide detailed description of the hazard"
+              ></textarea>
             </div>
 
-            <button type="submit" class="login-btn">Login</button>
+            <button type="submit" class="aiq-form-submit">
+              Submit Hazard Report
+            </button>
           </form>
+        </section>
+      </main>
 
-          
+      <footer class="aiq-main-footer">
+        <p class="aiq-footer-text">
+          An initiative of the Federal Road Safety Commission
+        </p>
+        <p class="aiq-footer-text">© 2025 Accident IQ. All rights reserved.</p>
 
-        <div class="footer">
-          <p>© 2025 AccidentIQ Prediction Platform. All rights reserved.</p>
-          <p style="color: #f8961e;">Powered By BellaTECH.NG</p>
+        <div class="aiq-social-links">
+          <a href="#" class="aiq-social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="aiq-social-icon"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="aiq-social-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="aiq-social-icon"><i class="fab fa-youtube"></i></a>
         </div>
-      </div>
+      </footer>
     </div>
-
-    <script src="js/storage.js"></script>
-    <script src="js/auth.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
